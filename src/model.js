@@ -2639,7 +2639,7 @@ class Model {
       }
     }
 
-    const instances = records.map(values => this.build(values, { isNewRecord: true, include: options.include }));
+    const instances = records.map(values => this.build(values, { isNewRecord: true, include: options.include, model: this }));
 
     const recursiveBulkCreate = async (instances, options) => {
       options = {
